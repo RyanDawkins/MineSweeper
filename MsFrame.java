@@ -84,7 +84,8 @@ public class MsFrame extends JFrame
 				getContentPane().remove(msp);
 				msp = new MsPanel(10, 10);
 				getContentPane().add(msp, BorderLayout.CENTER);
-				getContentPane().revalidate();
+				getContentPane().invalidate();
+				getContentPane().validate();
 				repaint();
 			}
 			else if(text.equals("Hard"))
@@ -92,7 +93,9 @@ public class MsFrame extends JFrame
 				getContentPane().remove(msp);
 				msp = new MsPanel(20, 20);
 				getContentPane().add(msp, BorderLayout.CENTER);
-				getContentPane().revalidate();
+				// revalidate not possible in Java Linux version
+				getContentPane().invalidate();
+				getContentPane().validate();
 				repaint();
 			}
 			else if(text.equals("Save"))
@@ -169,7 +172,9 @@ public class MsFrame extends JFrame
 						getContentPane().remove(msp);
 						msp = new MsPanel(grid);
 						getContentPane().add(msp, BorderLayout.CENTER);
-						getContentPane().revalidate();
+						// revalidate() not possible with linux
+						getContentPane().invalidate();
+						getContentPane().validate();
 						repaint();
 						inputStream.close();
 					}

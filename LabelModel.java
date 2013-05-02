@@ -109,27 +109,42 @@ public class LabelModel implements Serializable
 		{
 			if(!labelArr[this.y][this.x - 1].getModel().isNotBomb()) count++;
 		}
+		if(this.x-1 > 0 && y+1 < labelArr.length)
+	        {
+		    if(!labelArr[this.y+1][this.x-1].getModel().isNotBomb()) count++;
+		}
+		if(this.x+1 < labelArr.length && this.y+1 < labelArr.length)
+		{
+		    if(!labelArr[this.y+1][this.x+1].getModel().isNotBomb()) count++;
+		}
+		if(this.x-1 > 0 && this.y-1 > 0)
+		{
+		    if(!labelArr[this.y-1][this.x-1].getModel().isNotBomb()) count++;
+		}
+		if(this.x+1 < labelArr.length && this.y-1 > 0)
+		{
+		    if(!labelArr[this.y-1][this.x+1].getModel().isNotBomb()) count++;
+		}
 		
 		return count;
 	}
 	
 	public void reset()
 	{
-		try{
-			JOptionPane.showMessageDialog(null, "Oh Crap! You suck!");
-			for(int y = 0; y < labelArr.length; y++)
+	    try{
+		JOptionPane.showMessageDialog(null, "Oh Crap! You suck!");
+		for(int y = 0; y < labelArr.length; y++)
+		{
+		    for(int x = 0; x < labelArr[y].length; x++)
+		    {
+			labelArr[y][x].getModel().setDisabled(true);
+			if(!labelArr[y][x].getModel().isNotBomb())
 			{
-				for(int x = 0; x < labelArr[y].length; x++)
-				{
-					labelArr[y][x].getModel().setDisabled(true);
-					if(!labelArr[y][x].getModel().isNotBomb())
-					{
-						labelArr[y][x].setText("[*]");
-						labelArr[y][x].setForeground(Color.RED);
-					}
-				}
+			    labelArr[y][x].setText("[*]");
+			    labelArr[y][x].setForeground(Color.RED);
 			}
-		} catch(Exception e){ System.out.println(e.getMessage()); }
+		    }
+		}
+	    } catch(Exception e){ System.out.println(e.getMessage()); }
 	}
-	
 }
