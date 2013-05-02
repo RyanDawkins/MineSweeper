@@ -1,4 +1,6 @@
-##MineSweeper About
+#MineSweeper 
+
+ ##About
   * Version 1.1
   * Author: Ryan Dawkins
   * Description: This was a game that I made when I was learning the swing library in Java.
