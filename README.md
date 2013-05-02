@@ -5,7 +5,7 @@
   * Author: Ryan Dawkins
   * Description: This was a game that I made when I was learning the swing library in Java.
   * Warnings: This was not written in good MVC architecture and will be refactored in the future to fix the issue.
- ## Features
+## Features
   * New Game
    - Easy Game
    - Hard Game
@@ -13,7 +13,7 @@
    - Choose name
   * Exit Game
 
- ## Future
+## Future
   * Auto check spots with 0 mines surrounding
   * Settings
    - Change amount of mines
