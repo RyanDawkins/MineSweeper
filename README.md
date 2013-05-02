@@ -1,4 +1,5 @@
 #MineSweeper
+
  ## About
   * Version 1.1
   * Author: Ryan Dawkins
